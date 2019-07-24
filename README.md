@@ -5,6 +5,8 @@ A platform for creating quotes
 ### Live Demo
 https://beautiful-quote.firebaseapp.com/
 
+### `npm install`
+Clone this repo and run the command given above to install npm
 
 ### `npm start`
 
