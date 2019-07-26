@@ -10,10 +10,8 @@ function SignedInLinks(props) {
         <li>
           <NavLink to="/create-quote">Create Quote</NavLink>
         </li>
-        <li>
-          <a href="/" onClick={props.signOut}>
-            Log Out
-          </a>
+        <li onClick={props.signOut}>
+          <NavLink to="/sign-in">Log Out</NavLink>
         </li>
         <li>
           <a href="/" className="btn btn-floating indigo darken-2">

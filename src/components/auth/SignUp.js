@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { signUp } from "../../store/actions/authAction";
 import { Redirect } from "react-router-dom";
+import { Spring } from "react-spring/renderprops";
 
 class SignUp extends Component {
   state = {
@@ -29,85 +30,96 @@ class SignUp extends Component {
       return <Redirect to="/" />;
     } else {
       return (
-        <div
-          className="sign-in container white"
-          style={{ marginTop: "10%", padding: "20px" }}
+        <Spring
+          from={{ opacity: 0, margin: 0 }}
+          to={{ opacity: 1, margin: 7.5 }}
         >
-          <form onSubmit={this.handleSubmit} className="white">
-            <div className="row">
-              <div className="col s12">
-                <h5 className="text-grey text-darken-3">Sign Up</h5>
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="col s12">
+          {props => (
+            <div
+              className="sign-in container white"
+              style={{
+                opacity: `${props.opacity}`,
+                marginTop: `${props.margin}%`,
+                padding: "10px"
+              }}
+            >
+              <form onSubmit={this.handleSubmit} className="white">
                 <div className="row">
-                  <div className="input-field col s12 m6">
-                    <label htmlFor="first-name">First Name</label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      className="validate"
-                      onChange={this.handleChange}
-                    />
-                  </div>
-
-                  <div className="input-field col s12 m6">
-                    <label htmlFor="last-name">Last Name</label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      className="validate"
-                      onChange={this.handleChange}
-                    />
+                  <div className="col s12">
+                    <h5 className="text-grey text-darken-3">Sign Up</h5>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <div className="row">
-              <div className="col s12">
-                <div className="input-field">
-                  <label htmlFor="email">Email</label>
-                  <input
-                    type="text"
-                    id="email"
-                    className="validate"
-                    onChange={this.handleChange}
-                  />
-                </div>
-              </div>
-            </div>
+                <div className="row">
+                  <div className="col s12">
+                    <div className="row">
+                      <div className="input-field col s12 m6">
+                        <label htmlFor="first-name">First Name</label>
+                        <input
+                          type="text"
+                          id="firstName"
+                          className="validate"
+                          onChange={this.handleChange}
+                        />
+                      </div>
 
-            <div className="row">
-              <div className="col s12">
-                <div className="input-field">
-                  <label htmlFor="password">Password</label>
-                  <input
-                    type="password"
-                    id="password"
-                    className="validate"
-                    onChange={this.handleChange}
-                  />
+                      <div className="input-field col s12 m6">
+                        <label htmlFor="last-name">Last Name</label>
+                        <input
+                          type="text"
+                          id="lastName"
+                          className="validate"
+                          onChange={this.handleChange}
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            <div className="row">
-              <div className="col s12">
-                <div className="input-field">
-                  <button className="btn blue darken-2 z-depth-0">
-                    Sign Up
-                  </button>
+                <div className="row">
+                  <div className="col s12">
+                    <div className="input-field">
+                      <label htmlFor="email">Email</label>
+                      <input
+                        type="text"
+                        id="email"
+                        className="validate"
+                        onChange={this.handleChange}
+                      />
+                    </div>
+                  </div>
                 </div>
-              </div>
+
+                <div className="row">
+                  <div className="col s12">
+                    <div className="input-field">
+                      <label htmlFor="password">Password</label>
+                      <input
+                        type="password"
+                        id="password"
+                        className="validate"
+                        onChange={this.handleChange}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="row">
+                  <div className="col s12">
+                    <div className="input-field">
+                      <button className="btn blue darken-2 z-depth-0">
+                        Sign Up
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div className="container red-text center">
+                  {authError ? <p>{authError}</p> : null}
+                </div>
+              </form>
             </div>
-            <div className="container red-text center">
-              {authError ? <p>{authError}</p> : null}
-            </div>
-          </form>
-        </div>
+          )}
+        </Spring>
       );
     }
   }

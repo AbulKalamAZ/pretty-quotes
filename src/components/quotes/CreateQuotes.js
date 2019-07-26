@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { createQuote } from "../../store/actions/quotesAction";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
+import { Spring } from "react-spring/renderprops";
 
 class CreateQuotes extends Component {
   state = {
@@ -17,7 +18,6 @@ class CreateQuotes extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.createQuote(this.state);
-    this.refs.quote.value = "";
     this.props.history.push("/");
   };
   render() {
@@ -26,40 +26,50 @@ class CreateQuotes extends Component {
     if (!auth.uid) return <Redirect to="/sign-in" />;
 
     return (
-      <div
-        className="sign-in container white"
-        style={{ marginTop: "10%", padding: "20px" }}
-      >
-        <form onSubmit={this.handleSubmit} className="white">
-          <div className="row">
-            <div className="col s12">
-              <h5 className="text-grey text-darken-3">Today's thought</h5>
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="col s12">
-              <div className="input-field">
-                <input
-                  type="text"
-                  id="quote"
-                  placeholder="Your thought in words"
-                  onChange={this.handleChange}
-                  ref="quote"
-                />
+      <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
+        {props => (
+          <div
+            className="sign-in container white"
+            style={{
+              opacity: `${props.opacity}`,
+              marginTop: "10%",
+              padding: "20px"
+            }}
+          >
+            <form onSubmit={this.handleSubmit} className="white">
+              <div className="row">
+                <div className="col s12">
+                  <h5 className="text-grey text-darken-3">Today's thought</h5>
+                </div>
               </div>
-            </div>
-          </div>
 
-          <div className="row">
-            <div className="col s12">
-              <div className="input-field">
-                <button className="btn blue darken-2 z-depth-0">Done!</button>
+              <div className="row">
+                <div className="col s12">
+                  <div className="input-field">
+                    <input
+                      type="text"
+                      id="quote"
+                      placeholder="Your thought in words"
+                      onChange={this.handleChange}
+                      ref="quote"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
+
+              <div className="row">
+                <div className="col s12">
+                  <div className="input-field">
+                    <button className="btn blue darken-2 z-depth-0">
+                      Done!
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
-        </form>
-      </div>
+        )}
+      </Spring>
     );
   }
 }
