@@ -26,7 +26,7 @@ class SignIn extends Component {
 
     if (auth.uid) return <Redirect to="/" />;
     return (
-      <Spring from={{ opacity: 0, margin: 0 }} to={{ opacity: 1, margin: 7.5 }}>
+      <Spring from={{ opacity: 0, margin: 0 }} to={{ opacity: 1, margin: 5 }}>
         {props => (
           <div
             className="sign-in container white"

@@ -30,10 +30,7 @@ class SignUp extends Component {
       return <Redirect to="/" />;
     } else {
       return (
-        <Spring
-          from={{ opacity: 0, margin: 0 }}
-          to={{ opacity: 1, margin: 7.5 }}
-        >
+        <Spring from={{ opacity: 0, margin: 0 }} to={{ opacity: 1, margin: 5 }}>
           {props => (
             <div
               className="sign-in container white"
@@ -48,35 +45,27 @@ class SignUp extends Component {
                   <div className="col s12">
                     <h5 className="text-grey text-darken-3">Sign Up</h5>
                   </div>
-                </div>
 
-                <div className="row">
-                  <div className="col s12">
-                    <div className="row">
-                      <div className="input-field col s12 m6">
-                        <label htmlFor="first-name">First Name</label>
-                        <input
-                          type="text"
-                          id="firstName"
-                          className="validate"
-                          onChange={this.handleChange}
-                        />
-                      </div>
-
-                      <div className="input-field col s12 m6">
-                        <label htmlFor="last-name">Last Name</label>
-                        <input
-                          type="text"
-                          id="lastName"
-                          className="validate"
-                          onChange={this.handleChange}
-                        />
-                      </div>
-                    </div>
+                  <div className="input-field col s12 m6">
+                    <label htmlFor="first-name">First Name</label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      className="validate"
+                      onChange={this.handleChange}
+                    />
                   </div>
-                </div>
 
-                <div className="row">
+                  <div className="input-field col s12 m6">
+                    <label htmlFor="last-name">Last Name</label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      className="validate"
+                      onChange={this.handleChange}
+                    />
+                  </div>
+
                   <div className="col s12">
                     <div className="input-field">
                       <label htmlFor="email">Email</label>
@@ -88,9 +77,7 @@ class SignUp extends Component {
                       />
                     </div>
                   </div>
-                </div>
 
-                <div className="row">
                   <div className="col s12">
                     <div className="input-field">
                       <label htmlFor="password">Password</label>
@@ -102,9 +89,7 @@ class SignUp extends Component {
                       />
                     </div>
                   </div>
-                </div>
 
-                <div className="row">
                   <div className="col s12">
                     <div className="input-field">
                       <button className="btn blue darken-2 z-depth-0">
@@ -112,9 +97,10 @@ class SignUp extends Component {
                       </button>
                     </div>
                   </div>
-                </div>
-                <div className="container red-text center">
-                  {authError ? <p>{authError}</p> : null}
+
+                  <div className="container red-text center">
+                    {authError ? <p>{authError}</p> : null}
+                  </div>
                 </div>
               </form>
             </div>

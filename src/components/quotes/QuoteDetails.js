@@ -15,7 +15,7 @@ function QuoteDetails(props) {
   if (quote) {
     return (
       <animated.div style={componentStyle} className="container section">
-        <div className="card z-depth-0" style={{ marginTop: "10%" }}>
+        <div className="card z-depth-0" style={{ marginTop: "5%" }}>
           <div className="card-content grey-text text-darken-3">
             <p>{quote.quote}</p>
           </div>

@@ -6,19 +6,17 @@ import { signOut } from "../../store/actions/authAction";
 function SignedInLinks(props) {
   return (
     <div>
-      <ul className="right">
-        <li>
-          <NavLink to="/create-quote">Create Quote</NavLink>
-        </li>
-        <li onClick={props.signOut}>
-          <NavLink to="/sign-in">Log Out</NavLink>
-        </li>
-        <li>
-          <a href="/" className="btn btn-floating indigo darken-2">
-            {props.userProfile.initialName}
-          </a>
-        </li>
-      </ul>
+      <li>
+        <NavLink to="/create-quote">Create Quote</NavLink>
+      </li>
+      <li onClick={props.signOut}>
+        <NavLink to="/sign-in">Log Out</NavLink>
+      </li>
+      <li>
+        <a href="/" className="btn btn-floating indigo darken-2">
+          {props.userProfile.initialName}
+        </a>
+      </li>
     </div>
   );
 }
