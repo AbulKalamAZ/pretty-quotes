@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/pretty-quotes/static/css/main.65c9ec8c.chunk.css",
+    "main.js": "/pretty-quotes/static/js/main.4d57ade9.chunk.js",
+    "main.js.map": "/pretty-quotes/static/js/main.4d57ade9.chunk.js.map",
+    "runtime~main.js": "/pretty-quotes/static/js/runtime~main.b323117f.js",
+    "runtime~main.js.map": "/pretty-quotes/static/js/runtime~main.b323117f.js.map",
+    "static/css/2.ad9eb4b5.chunk.css": "/pretty-quotes/static/css/2.ad9eb4b5.chunk.css",
+    "static/js/2.18b723d1.chunk.js": "/pretty-quotes/static/js/2.18b723d1.chunk.js",
+    "static/js/2.18b723d1.chunk.js.map": "/pretty-quotes/static/js/2.18b723d1.chunk.js.map",
+    "index.html": "/pretty-quotes/index.html",
+    "precache-manifest.0268c078ad1a5ae95a4c9564a913c344.js": "/pretty-quotes/precache-manifest.0268c078ad1a5ae95a4c9564a913c344.js",
+    "service-worker.js": "/pretty-quotes/service-worker.js",
+    "static/css/2.ad9eb4b5.chunk.css.map": "/pretty-quotes/static/css/2.ad9eb4b5.chunk.css.map",
+    "static/css/main.65c9ec8c.chunk.css.map": "/pretty-quotes/static/css/main.65c9ec8c.chunk.css.map"
+  }
+}
